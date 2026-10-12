@@ -71,8 +71,12 @@ photo rather than sitting below it — that is what keeps the heights equal.
 Collapsed cards are 150px (130px while another is hovered) and the expanded card
 is 310px. Only the expanded card shows its caption. The CEO is expanded by
 default via `.is-lead`. `:focus-within` mirrors the hover for keyboard users;
-gated behind `@media (hover: hover) and (min-width: 640px)` so touch devices keep
-the plain horizontally-scrollable row.
+gated behind `@media (hover: hover) and (min-width: 640px)`.
+
+On touch devices there is no hover, so the reveal can never fire — there the
+cards are widened to 240px and **every** caption is shown, in a horizontally
+scrollable row. Without that, five of the six names would be invisible on a
+phone.
 
 > **Placeholder names.** Only the CEO is named in the source SVG. The other five
 > cards read `TEAM MEMBER` / `Designation` — replace those two lines in each

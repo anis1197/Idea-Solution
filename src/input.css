@@ -57,6 +57,14 @@ body { -webkit-font-smoothing: antialiased; }
   .team-row:focus-within .team-card:focus figcaption { opacity: 1; }
 }
 
+/* Touch devices have no hover, so the reveal above can never fire — without
+   this every name except the CEO's would be permanently invisible. Show them
+   all, and widen the cards so the names aren't truncated; the row scrolls. */
+@media (hover: none), (max-width: 639px) {
+  .team-card.team-card { width: 240px; }
+  .team-card:not(.is-lead) figcaption { opacity: 1; }
+}
+
 .team-card:focus-visible { outline: 3px solid #0164FF; outline-offset: 2px; }
 
 @media (prefers-reduced-motion: reduce) {
