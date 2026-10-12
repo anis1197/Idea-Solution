@@ -1,0 +1,24 @@
+{
+  "name": "idea-solution",
+  "version": "1.0.0",
+  "description": "Idea Solution \u2014 company portfolio landing page",
+  "scripts": {
+    "build": "tailwindcss -i src/input.css -o assets/css/styles.css --minify",
+    "watch": "tailwindcss -i src/input.css -o assets/css/styles.css --watch",
+    "serve": "python3 -m http.server 8777"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anis1197/Idea-Solution.git"
+  },
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/anis1197/Idea-Solution/issues"
+  },
+  "homepage": "https://github.com/anis1197/Idea-Solution#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  },
+  "private": true
+}

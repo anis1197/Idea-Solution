@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body { -webkit-font-smoothing: antialiased; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* --- Services: cards stick and pile up, each one covering the last --- */
+@media (min-width: 1024px) {
+  /* --svc-top = site header + "Service We Offer" bar, measured in JS.
+     --i is set per card; each sticks 22px lower so the pile stays readable */
+  .svc-card { top: calc(var(--svc-top, 212px) + var(--i) * 22px); }
+  /* later cards must paint over earlier ones */
+  .svc-card:nth-child(1) { z-index: 1; }
+  .svc-card:nth-child(2) { z-index: 2; }
+  .svc-card:nth-child(3) { z-index: 3; }
+  .svc-card:nth-child(4) { z-index: 4; }
+  /* the card is opaque so it hides the one beneath; the shadow sells the stack */
+  .svc-card { box-shadow: 0 -8px 24px -12px rgba(0, 25, 76, .18); }
+  /* trailing room so the last card can sit pinned before the section ends */
+  .svc-stack { padding-bottom: 20vh; }
+}
+
+/* The pinned title + subtitle bar costs ~255px of viewport. On screens too
+   short to also show a whole card beneath it, drop the stacking and let the
+   cards flow as a normal list rather than clipping them.
+   Cards are taller at narrower widths (486px at 1024, 456px at 1440), hence
+   the two thresholds. Selectors are doubled so they outrank the
+   equal-specificity `lg:sticky` utility whichever order the two land in
+   (this file is emitted after @tailwind utilities). */
+@media (min-width: 1024px) and (max-width: 1279px) and (max-height: 829px),
+       (min-width: 1280px) and (max-height: 799px) {
+  .svc-head.svc-head   { position: static; }
+  .svc-card.svc-card   { position: relative; top: auto; box-shadow: none; }
+  .svc-stack.svc-stack { padding-bottom: 0; }
+}
+
+/* --- Experts: hover/focus expands one card and collapses the rest --- */
+.team-card { width: 150px; transition: width .45s cubic-bezier(.4, 0, .2, 1); }
+.team-card.is-lead { width: 310px; }           /* CEO is expanded by default */
+/* caption sits over the photo, so every card is exactly the same height */
+.team-card figcaption {
+  opacity: 1;
+  transition: opacity .3s ease .12s;
+}
+.team-card:not(.is-lead) figcaption { opacity: 0; }
+
+@media (hover: hover) and (min-width: 640px) {
+  .team-row:hover .team-card,
+  .team-row:focus-within .team-card { width: 130px; }
+  .team-row:hover .team-card:hover,
+  .team-row:focus-within .team-card:focus { width: 310px; }
+  /* only the expanded card shows its name + designation */
+  .team-row:hover .team-card figcaption,
+  .team-row:focus-within .team-card figcaption { opacity: 0; }
+  .team-row:hover .team-card:hover figcaption,
+  .team-row:focus-within .team-card:focus figcaption { opacity: 1; }
+}
+
+.team-card:focus-visible { outline: 3px solid #0164FF; outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .team-card, .team-card figcaption { transition: none; }
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
