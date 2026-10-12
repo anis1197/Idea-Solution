@@ -35,9 +35,17 @@ body { -webkit-font-smoothing: antialiased; }
   .svc-stack.svc-stack { padding-bottom: 0; }
 }
 
-/* --- Experts: hover/focus expands one card and collapses the rest --- */
-.team-card { width: 150px; transition: width .45s cubic-bezier(.4, 0, .2, 1); }
-.team-card.is-lead { width: 310px; }           /* CEO is expanded by default */
+/* --- Experts: the row fills its container; hover/focus expands one card ---
+   Sizing is flex-grow rather than fixed widths so the row is exactly full
+   width at any viewport. The lead card is worth 2 units and the rest 1, and
+   hovering swaps which card holds the 2 — the total stays constant, so the row
+   never changes width or reflows while the cards resize. */
+.team-card {
+  flex: 1 1 0;
+  min-width: 0;                                /* let the captions truncate */
+  transition: flex-grow .45s cubic-bezier(.4, 0, .2, 1);
+}
+.team-card.is-lead { flex-grow: 2; }           /* CEO is expanded by default */
 /* caption sits over the photo, so every card is exactly the same height */
 .team-card figcaption {
   opacity: 1;
@@ -47,9 +55,9 @@ body { -webkit-font-smoothing: antialiased; }
 
 @media (hover: hover) and (min-width: 640px) {
   .team-row:hover .team-card,
-  .team-row:focus-within .team-card { width: 130px; }
+  .team-row:focus-within .team-card { flex-grow: 1; }
   .team-row:hover .team-card:hover,
-  .team-row:focus-within .team-card:focus { width: 310px; }
+  .team-row:focus-within .team-card:focus { flex-grow: 2; }
   /* only the expanded card shows its name + designation */
   .team-row:hover .team-card figcaption,
   .team-row:focus-within .team-card figcaption { opacity: 0; }
@@ -61,7 +69,9 @@ body { -webkit-font-smoothing: antialiased; }
    this every name except the CEO's would be permanently invisible. Show them
    all, and widen the cards so the names aren't truncated; the row scrolls. */
 @media (hover: none), (max-width: 639px) {
-  .team-card.team-card { width: 240px; }
+  /* fixed width here instead, so the row scrolls rather than squeezing seven
+     cards into a phone screen */
+  .team-card.team-card { flex: 0 0 240px; }
   .team-card:not(.is-lead) figcaption { opacity: 1; }
 }
 

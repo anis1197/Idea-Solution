@@ -71,12 +71,16 @@ cards are taller at narrower widths). Those override selectors are doubled
 utility regardless of which order the two end up in. Below 1024px the whole
 effect is off.
 
-**Experts — hover to expand.** Pure CSS (`.team-row` / `.team-card`). Every card
-is a uniform 396px tall, with the name/designation overlaid on the bottom of the
-photo rather than sitting below it — that is what keeps the heights equal.
-Collapsed cards are 150px (130px while another is hovered) and the expanded card
-is 310px. Only the expanded card shows its caption. The CEO is expanded by
-default via `.is-lead`. `:focus-within` mirrors the hover for keyboard users;
+**Experts — full-width row, hover to expand.** Pure CSS (`.team-row` /
+`.team-card`). Seven cards, CEO in the middle. Every card is a uniform 396px
+tall, with the name/designation overlaid on the bottom of the photo rather than
+sitting below it — that is what keeps the heights equal.
+
+Sizing is `flex-grow`, not fixed widths, so the row is exactly full width at any
+viewport. The lead card is worth 2 units and the other six 1 each; hovering just
+swaps which card holds the 2, so the total never changes and the row doesn't
+reflow while the cards resize. Only the expanded card shows its caption; the CEO
+is expanded by default via `.is-lead`. `:focus-within` mirrors the hover for keyboard users;
 gated behind `@media (hover: hover) and (min-width: 640px)`.
 
 On touch devices there is no hover, so the reveal can never fire — there the
@@ -84,6 +88,8 @@ cards are widened to 240px and **every** caption is shown, in a horizontally
 scrollable row. Without that, five of the six names would be invisible on a
 phone.
 
-> **Placeholder names.** Only the CEO is named in the source SVG. The other five
-> cards read `TEAM MEMBER` / `Designation` — replace those two lines in each
-> `<figcaption>` with the real name and role.
+> **Placeholder content.** Only the CEO is named in the source SVG. The other
+> six cards read `TEAM MEMBER` / `Designation` — replace those two lines in each
+> `<figcaption>` with the real name and role. The seventh card also reuses
+> `tm1.jpg` as its photo, because the source SVG has no seventh portrait; drop a
+> real one into `assets/img/` and point that `<img>` at it.
