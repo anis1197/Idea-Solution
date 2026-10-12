@@ -585,17 +585,24 @@
 <section class="relative overflow-hidden pb-16 lg:pb-24">
   <div class="mx-auto max-w-page px-5 lg:px-6">
 
-    <!-- connector rail: drop-lines sit on the centres of the three cards in row 1.
-         Card pitch is (25% - 15px) + 20px gap, so those centres land at
-         25% - 5px, 50% and 75% + 5px at any container width. -->
+    <!-- Connector rail. The middle line drops onto row 1's centre card (50%).
+         The outer two run past row 1 and land on the first and last cards of
+         row 2: with 4 cards of (25% - 15px) and 20px gaps, those centres are at
+         12.5% - 7.5px and 87.5% + 7.5px for any container width. Row 1 is
+         centred, so it always starts exactly half a gap (10px) inside those
+         lines — they clear it at every width by construction.
+         214px = rail 108 + row 1 (86) + the 20px row gap. -->
     <div class="relative hidden lg:block h-[108px]" aria-hidden="true">
       <span class="absolute inset-x-0 top-0 h-px bg-slate-200"></span>
-      <span class="absolute left-[calc(25%_-_5px)] top-0 h-[108px] w-px bg-slate-200"></span>
-      <span class="absolute left-[calc(25%_-_5px)] -top-[7px] h-3.5 w-3.5 -translate-x-1/2 rounded-full bg-[#DCE8F7]"></span>
+
+      <span class="absolute left-[calc(12.5%_-_7.5px)] top-0 h-[214px] w-px bg-slate-200"></span>
+      <span class="absolute left-[calc(12.5%_-_7.5px)] -top-[7px] h-3.5 w-3.5 -translate-x-1/2 rounded-full bg-[#DCE8F7]"></span>
+
       <span class="absolute left-1/2 top-0 h-[88px] w-px bg-slate-200"></span>
       <span class="absolute left-1/2 -top-[7px] h-3.5 w-3.5 -translate-x-1/2 rounded-full bg-[#DCE8F7]"></span>
-      <span class="absolute left-[calc(75%_+_5px)] top-0 h-[108px] w-px bg-slate-200"></span>
-      <span class="absolute left-[calc(75%_+_5px)] -top-[7px] h-3.5 w-3.5 -translate-x-1/2 rounded-full bg-[#DCE8F7]"></span>
+
+      <span class="absolute left-[calc(87.5%_+_7.5px)] top-0 h-[214px] w-px bg-slate-200"></span>
+      <span class="absolute left-[calc(87.5%_+_7.5px)] -top-[7px] h-3.5 w-3.5 -translate-x-1/2 rounded-full bg-[#DCE8F7]"></span>
     </div>
 
     <h2 class="sr-only">Global partners</h2>
