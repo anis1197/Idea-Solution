@@ -18,7 +18,13 @@ so the site works with no build step. Rebuild it after editing `index.html`
 
     npm install          # once
     npm run build        # minified, ~23 KB (5.5 KB gzipped)
-    npm run watch        # rebuild on change
+    npm run watch        # rebuild on change (no cache stamp - use for local dev)
+
+`npm run build` also stamps the `<link>` with a hash of the CSS
+(`styles.css?v=5557e002`). The stylesheet sits at a fixed URL, so without that
+a returning visitor can get fresh HTML with a cached older stylesheet and a
+broken layout until the cache expires. Always use `npm run build` before
+committing, not just `watch`.
 
 Forgetting to rebuild after adding a new utility class is the one way to break
 styling — the class simply won't exist in the stylesheet.
