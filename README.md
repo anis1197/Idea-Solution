@@ -21,7 +21,7 @@ so the site works with no build step. Rebuild it after editing `index.html`
     npm run watch        # rebuild on change (no cache stamp - use for local dev)
 
 `npm run build` also stamps the `<link>` with a hash of the CSS
-(`styles.css?v=5557e002`). The stylesheet sits at a fixed URL, so without that
+(e.g. `styles.css?v=4a24a4bd`). The stylesheet sits at a fixed URL, so without that
 a returning visitor can get fresh HTML with a cached older stylesheet and a
 broken layout until the cache expires. Always use `npm run build` before
 committing, not just `watch`.
@@ -51,7 +51,7 @@ styling — the class simply won't exist in the stylesheet.
 
 ## Interactions
 
-**Services — pinned heading + stacking cards (desktop only).** The
+**Services — pinned heading + stacking cards (768px and up).** The
 "Service We Offer" title *and* subtitle sit in a sticky bar pinned under the
 site header. Each card is `position: sticky` with a staggered top offset and an
 increasing `z-index`, so as you scroll a card pins below that bar and the next
@@ -63,13 +63,17 @@ copy can't knock the cards out of alignment. To change how much of each buried
 card shows, edit the `22px` step in
 `.svc-card { top: calc(var(--svc-top) + var(--i) * 22px) }`.
 
-The pinned bar costs ~255px of viewport, so on screens too short to also show a
-whole card the stacking is switched off and the cards flow as a normal list
-(thresholds: under 830px tall below 1280px wide, under 800px tall above it —
-cards are taller at narrower widths). Those override selectors are doubled
-(`.svc-card.svc-card`) so they outrank the equal-specificity `lg:sticky`
-utility regardless of which order the two end up in. Below 1024px the whole
-effect is off.
+Tablets get exactly the same treatment as desktop; only phones (below 768px)
+fall back to the stacked card layout.
+
+The pinned bar costs ~255px of viewport and the cards grow taller as the
+viewport narrows (608px at 768, 486px at 1000, 456px at 1440), so on screens
+too short to show the bar plus a whole card the stacking switches off and the
+cards flow as a plain list. The JS measures whether it actually fits and sets
+`.svc-no-stack` on the section, rather than relying on a width/height threshold
+table that would need a new entry for every breakpoint. Those override
+selectors use two classes so they outrank the equal-specificity `md:sticky`
+utility regardless of source order.
 
 **Experts — full-width row, hover to expand.** Pure CSS (`.team-row` /
 `.team-card`). Seven cards, CEO in the middle. Every card is a uniform 396px
