@@ -35,6 +35,43 @@ body { -webkit-font-smoothing: antialiased; }
   .svc-stack.svc-stack { padding-bottom: 0; }
 }
 
+/* --- Clients feedback: the two side columns scroll in opposite directions ---
+   The track renders the card list twice and travels exactly one copy's height,
+   so the loop is seamless. Spacing is margin-bottom, not gap: with `gap` the
+   two copies are separated by one extra gap, so a -50% travel lands half a gap
+   short and the loop visibly jumps. */
+.fb-col {
+  height: 664px;                       /* matches the featured card */
+  overflow: hidden;
+  /* fades the top and bottom cards out, so they read as coming from and
+     disappearing into hidden space, leaving the middle one at full opacity */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 30%, #000 70%, transparent 100%);
+          mask-image: linear-gradient(to bottom, transparent 0%, #000 30%, #000 70%, transparent 100%);
+}
+.fb-track {
+  display: flow-root;                  /* contain the items' margins */
+  will-change: transform;
+}
+.fb-item { margin-bottom: 20px; }
+.fb-up   { animation: fb-scroll-up   34s linear infinite; }
+.fb-down { animation: fb-scroll-down 34s linear infinite; }
+
+/* pause while the reader is looking at a card */
+.fb-col:hover .fb-track { animation-play-state: paused; }
+
+@keyframes fb-scroll-up {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+@keyframes fb-scroll-down {
+  from { transform: translateY(-50%); }
+  to   { transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fb-up, .fb-down { animation: none; }
+}
+
 /* --- Experts: the row fills its container; hover/focus expands one card ---
    Sizing is flex-grow rather than fixed widths so the row is exactly full
    width at any viewport. The lead card is worth 2 units and the rest 1, and

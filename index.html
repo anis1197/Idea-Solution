@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v=4a24a4bd">
+<link rel="stylesheet" href="assets/css/styles.css?v=9a87d0d0">
 </head>
 
 <body class="font-sans bg-white text-navy antialiased overflow-x-clip">
@@ -486,38 +486,138 @@
 
   <div class="mt-14 grid lg:grid-cols-3 gap-6 items-start">
 
-    <!-- left column -->
-    <div class="hidden lg:grid gap-6">
-      <figure class="bg-[#F1F1F1] p-7">
-        <div class="flex items-center gap-4">
-          <img src="assets/img/t1.jpg" alt="" class="h-14 w-14 rounded-full object-cover">
-          <figcaption>
-            <div class="text-[14px] font-bold tracking-wide">TAREQ MAHMUD CHOWDHURY</div>
-            <div class="text-[14px] text-ink">Managing Director, Nexiustech Limited</div>
-          </figcaption>
-        </div>
-        <hr class="my-5 border-slate-300">
-        <blockquote class="text-[15px] leading-[1.75] text-navy text-justify">
-          &ldquo;I know I can count on Idea Solution if I need my project done fast and with
-          the best possible result. Idea Solution was a real pleasure to work with and we
-          look forward to working with Idea Solution again&rdquo;
-        </blockquote>
-      </figure>
-
-      <figure class="bg-[#F1F1F1] p-7 opacity-40">
-        <div class="flex items-center gap-4">
-          <img src="assets/img/t2.jpg" alt="" class="h-14 w-14 rounded-full object-cover">
-          <figcaption>
-            <div class="text-[14px] font-bold tracking-wide">TAREQ MAHMUD CHOWDHURY</div>
-            <div class="text-[14px] text-ink">Managing Director, Nexiustech Limited</div>
-          </figcaption>
-        </div>
-        <hr class="my-5 border-slate-300">
-        <blockquote class="text-[15px] leading-[1.75] text-navy text-justify">
-          &ldquo;I know I can count on Idea Solution if I need my project done fast and with
-          the best possible result.&rdquo;
-        </blockquote>
-      </figure>
+    <!-- left column: scrolls up; second copy makes the loop seamless -->
+    <div class="fb-col hidden lg:block">
+      <ul class="fb-track fb-up">
+        <li class="fb-item">
+          <figure class="bg-[#F1F1F1] p-7">
+            <div class="flex items-center gap-4">
+              <img src="assets/img/t1.jpg" alt="" class="h-14 w-14 shrink-0 rounded-full object-cover">
+              <figcaption>
+                <div class="text-[14px] font-bold tracking-wide">TAREQ MAHMUD CHOWDHURY</div>
+                <div class="text-[14px] text-ink">Managing Director, Nexiustech Limited</div>
+              </figcaption>
+            </div>
+            <hr class="my-5 border-slate-300">
+            <blockquote class="text-[15px] leading-[1.75] text-navy text-justify">
+              &ldquo;I know I can count on Idea Solution if I need my project done fast and with
+            the best possible result.&rdquo;
+            </blockquote>
+          </figure>
+        </li>
+        <li class="fb-item">
+          <figure class="bg-[#F1F1F1] p-7">
+            <div class="flex items-center gap-4">
+              <img src="assets/img/t2.jpg" alt="" class="h-14 w-14 shrink-0 rounded-full object-cover">
+              <figcaption>
+                <div class="text-[14px] font-bold tracking-wide">TAREQ MAHMUD CHOWDHURY</div>
+                <div class="text-[14px] text-ink">Managing Director, Nexiustech Limited</div>
+              </figcaption>
+            </div>
+            <hr class="my-5 border-slate-300">
+            <blockquote class="text-[15px] leading-[1.75] text-navy text-justify">
+              &ldquo;I know I can count on Idea Solution if I need my project done fast and with
+            the best possible result. Idea Solution was a real pleasure to work with.&rdquo;
+            </blockquote>
+          </figure>
+        </li>
+        <li class="fb-item">
+          <figure class="bg-[#F1F1F1] p-7">
+            <div class="flex items-center gap-4">
+              <img src="assets/img/t3.jpg" alt="" class="h-14 w-14 shrink-0 rounded-full object-cover">
+              <figcaption>
+                <div class="text-[14px] font-bold tracking-wide">TAREQ MAHMUD CHOWDHURY</div>
+                <div class="text-[14px] text-ink">Managing Director, Nexiustech Limited</div>
+              </figcaption>
+            </div>
+            <hr class="my-5 border-slate-300">
+            <blockquote class="text-[15px] leading-[1.75] text-navy text-justify">
+              &ldquo;I know I can count on Idea Solution if I need my project done fast and with
+            the best possible result.&rdquo;
+            </blockquote>
+          </figure>
+        </li>
+        <li class="fb-item">
+          <figure class="bg-[#F1F1F1] p-7">
+            <div class="flex items-center gap-4">
+              <img src="assets/img/t4.jpg" alt="" class="h-14 w-14 shrink-0 rounded-full object-cover">
+              <figcaption>
+                <div class="text-[14px] font-bold tracking-wide">TAREQ MAHMUD CHOWDHURY</div>
+                <div class="text-[14px] text-ink">Managing Director, Nexiustech Limited</div>
+              </figcaption>
+            </div>
+            <hr class="my-5 border-slate-300">
+            <blockquote class="text-[15px] leading-[1.75] text-navy text-justify">
+              &ldquo;I know I can count on Idea Solution if I need my project done fast and with
+            the best possible result. Idea Solution was a real pleasure to work with.&rdquo;
+            </blockquote>
+          </figure>
+        </li>
+        <li class="fb-item" aria-hidden="true">
+          <figure class="bg-[#F1F1F1] p-7">
+            <div class="flex items-center gap-4">
+              <img src="assets/img/t1.jpg" alt="" class="h-14 w-14 shrink-0 rounded-full object-cover">
+              <figcaption>
+                <div class="text-[14px] font-bold tracking-wide">TAREQ MAHMUD CHOWDHURY</div>
+                <div class="text-[14px] text-ink">Managing Director, Nexiustech Limited</div>
+              </figcaption>
+            </div>
+            <hr class="my-5 border-slate-300">
+            <blockquote class="text-[15px] leading-[1.75] text-navy text-justify">
+              &ldquo;I know I can count on Idea Solution if I need my project done fast and with
+            the best possible result.&rdquo;
+            </blockquote>
+          </figure>
+        </li>
+        <li class="fb-item" aria-hidden="true">
+          <figure class="bg-[#F1F1F1] p-7">
+            <div class="flex items-center gap-4">
+              <img src="assets/img/t2.jpg" alt="" class="h-14 w-14 shrink-0 rounded-full object-cover">
+              <figcaption>
+                <div class="text-[14px] font-bold tracking-wide">TAREQ MAHMUD CHOWDHURY</div>
+                <div class="text-[14px] text-ink">Managing Director, Nexiustech Limited</div>
+              </figcaption>
+            </div>
+            <hr class="my-5 border-slate-300">
+            <blockquote class="text-[15px] leading-[1.75] text-navy text-justify">
+              &ldquo;I know I can count on Idea Solution if I need my project done fast and with
+            the best possible result. Idea Solution was a real pleasure to work with.&rdquo;
+            </blockquote>
+          </figure>
+        </li>
+        <li class="fb-item" aria-hidden="true">
+          <figure class="bg-[#F1F1F1] p-7">
+            <div class="flex items-center gap-4">
+              <img src="assets/img/t3.jpg" alt="" class="h-14 w-14 shrink-0 rounded-full object-cover">
+              <figcaption>
+                <div class="text-[14px] font-bold tracking-wide">TAREQ MAHMUD CHOWDHURY</div>
+                <div class="text-[14px] text-ink">Managing Director, Nexiustech Limited</div>
+              </figcaption>
+            </div>
+            <hr class="my-5 border-slate-300">
+            <blockquote class="text-[15px] leading-[1.75] text-navy text-justify">
+              &ldquo;I know I can count on Idea Solution if I need my project done fast and with
+            the best possible result.&rdquo;
+            </blockquote>
+          </figure>
+        </li>
+        <li class="fb-item" aria-hidden="true">
+          <figure class="bg-[#F1F1F1] p-7">
+            <div class="flex items-center gap-4">
+              <img src="assets/img/t4.jpg" alt="" class="h-14 w-14 shrink-0 rounded-full object-cover">
+              <figcaption>
+                <div class="text-[14px] font-bold tracking-wide">TAREQ MAHMUD CHOWDHURY</div>
+                <div class="text-[14px] text-ink">Managing Director, Nexiustech Limited</div>
+              </figcaption>
+            </div>
+            <hr class="my-5 border-slate-300">
+            <blockquote class="text-[15px] leading-[1.75] text-navy text-justify">
+              &ldquo;I know I can count on Idea Solution if I need my project done fast and with
+            the best possible result. Idea Solution was a real pleasure to work with.&rdquo;
+            </blockquote>
+          </figure>
+        </li>
+      </ul>
     </div>
 
     <!-- featured -->
@@ -545,38 +645,138 @@
       </dl>
     </figure>
 
-    <!-- right column -->
-    <div class="hidden lg:grid gap-6">
-      <figure class="bg-[#F1F1F1] p-7">
-        <div class="flex items-center gap-4">
-          <img src="assets/img/t3.jpg" alt="" class="h-14 w-14 rounded-full object-cover">
-          <figcaption>
-            <div class="text-[14px] font-bold tracking-wide">TAREQ MAHMUD CHOWDHURY</div>
-            <div class="text-[14px] text-ink">Managing Director, Nexiustech Limited</div>
-          </figcaption>
-        </div>
-        <hr class="my-5 border-slate-300">
-        <blockquote class="text-[15px] leading-[1.75] text-navy text-justify">
-          &ldquo;I know I can count on Idea Solution if I need my project done fast and with
-          the best possible result. Idea Solution was a real pleasure to work with and we
-          look forward to working with Idea Solution again&rdquo;
-        </blockquote>
-      </figure>
-
-      <figure class="bg-[#F1F1F1] p-7 opacity-40">
-        <div class="flex items-center gap-4">
-          <img src="assets/img/t4.jpg" alt="" class="h-14 w-14 rounded-full object-cover">
-          <figcaption>
-            <div class="text-[14px] font-bold tracking-wide">TAREQ MAHMUD CHOWDHURY</div>
-            <div class="text-[14px] text-ink">Managing Director, Nexiustech Limited</div>
-          </figcaption>
-        </div>
-        <hr class="my-5 border-slate-300">
-        <blockquote class="text-[15px] leading-[1.75] text-navy text-justify">
-          &ldquo;I know I can count on Idea Solution if I need my project done fast and with
-          the best possible result.&rdquo;
-        </blockquote>
-      </figure>
+    <!-- right column: scrolls down; second copy makes the loop seamless -->
+    <div class="fb-col hidden lg:block">
+      <ul class="fb-track fb-down">
+        <li class="fb-item">
+          <figure class="bg-[#F1F1F1] p-7">
+            <div class="flex items-center gap-4">
+              <img src="assets/img/t3.jpg" alt="" class="h-14 w-14 shrink-0 rounded-full object-cover">
+              <figcaption>
+                <div class="text-[14px] font-bold tracking-wide">TAREQ MAHMUD CHOWDHURY</div>
+                <div class="text-[14px] text-ink">Managing Director, Nexiustech Limited</div>
+              </figcaption>
+            </div>
+            <hr class="my-5 border-slate-300">
+            <blockquote class="text-[15px] leading-[1.75] text-navy text-justify">
+              &ldquo;I know I can count on Idea Solution if I need my project done fast and with
+            the best possible result. Idea Solution was a real pleasure to work with.&rdquo;
+            </blockquote>
+          </figure>
+        </li>
+        <li class="fb-item">
+          <figure class="bg-[#F1F1F1] p-7">
+            <div class="flex items-center gap-4">
+              <img src="assets/img/t4.jpg" alt="" class="h-14 w-14 shrink-0 rounded-full object-cover">
+              <figcaption>
+                <div class="text-[14px] font-bold tracking-wide">TAREQ MAHMUD CHOWDHURY</div>
+                <div class="text-[14px] text-ink">Managing Director, Nexiustech Limited</div>
+              </figcaption>
+            </div>
+            <hr class="my-5 border-slate-300">
+            <blockquote class="text-[15px] leading-[1.75] text-navy text-justify">
+              &ldquo;I know I can count on Idea Solution if I need my project done fast and with
+            the best possible result.&rdquo;
+            </blockquote>
+          </figure>
+        </li>
+        <li class="fb-item">
+          <figure class="bg-[#F1F1F1] p-7">
+            <div class="flex items-center gap-4">
+              <img src="assets/img/t1.jpg" alt="" class="h-14 w-14 shrink-0 rounded-full object-cover">
+              <figcaption>
+                <div class="text-[14px] font-bold tracking-wide">TAREQ MAHMUD CHOWDHURY</div>
+                <div class="text-[14px] text-ink">Managing Director, Nexiustech Limited</div>
+              </figcaption>
+            </div>
+            <hr class="my-5 border-slate-300">
+            <blockquote class="text-[15px] leading-[1.75] text-navy text-justify">
+              &ldquo;I know I can count on Idea Solution if I need my project done fast and with
+            the best possible result. Idea Solution was a real pleasure to work with.&rdquo;
+            </blockquote>
+          </figure>
+        </li>
+        <li class="fb-item">
+          <figure class="bg-[#F1F1F1] p-7">
+            <div class="flex items-center gap-4">
+              <img src="assets/img/t2.jpg" alt="" class="h-14 w-14 shrink-0 rounded-full object-cover">
+              <figcaption>
+                <div class="text-[14px] font-bold tracking-wide">TAREQ MAHMUD CHOWDHURY</div>
+                <div class="text-[14px] text-ink">Managing Director, Nexiustech Limited</div>
+              </figcaption>
+            </div>
+            <hr class="my-5 border-slate-300">
+            <blockquote class="text-[15px] leading-[1.75] text-navy text-justify">
+              &ldquo;I know I can count on Idea Solution if I need my project done fast and with
+            the best possible result.&rdquo;
+            </blockquote>
+          </figure>
+        </li>
+        <li class="fb-item" aria-hidden="true">
+          <figure class="bg-[#F1F1F1] p-7">
+            <div class="flex items-center gap-4">
+              <img src="assets/img/t3.jpg" alt="" class="h-14 w-14 shrink-0 rounded-full object-cover">
+              <figcaption>
+                <div class="text-[14px] font-bold tracking-wide">TAREQ MAHMUD CHOWDHURY</div>
+                <div class="text-[14px] text-ink">Managing Director, Nexiustech Limited</div>
+              </figcaption>
+            </div>
+            <hr class="my-5 border-slate-300">
+            <blockquote class="text-[15px] leading-[1.75] text-navy text-justify">
+              &ldquo;I know I can count on Idea Solution if I need my project done fast and with
+            the best possible result. Idea Solution was a real pleasure to work with.&rdquo;
+            </blockquote>
+          </figure>
+        </li>
+        <li class="fb-item" aria-hidden="true">
+          <figure class="bg-[#F1F1F1] p-7">
+            <div class="flex items-center gap-4">
+              <img src="assets/img/t4.jpg" alt="" class="h-14 w-14 shrink-0 rounded-full object-cover">
+              <figcaption>
+                <div class="text-[14px] font-bold tracking-wide">TAREQ MAHMUD CHOWDHURY</div>
+                <div class="text-[14px] text-ink">Managing Director, Nexiustech Limited</div>
+              </figcaption>
+            </div>
+            <hr class="my-5 border-slate-300">
+            <blockquote class="text-[15px] leading-[1.75] text-navy text-justify">
+              &ldquo;I know I can count on Idea Solution if I need my project done fast and with
+            the best possible result.&rdquo;
+            </blockquote>
+          </figure>
+        </li>
+        <li class="fb-item" aria-hidden="true">
+          <figure class="bg-[#F1F1F1] p-7">
+            <div class="flex items-center gap-4">
+              <img src="assets/img/t1.jpg" alt="" class="h-14 w-14 shrink-0 rounded-full object-cover">
+              <figcaption>
+                <div class="text-[14px] font-bold tracking-wide">TAREQ MAHMUD CHOWDHURY</div>
+                <div class="text-[14px] text-ink">Managing Director, Nexiustech Limited</div>
+              </figcaption>
+            </div>
+            <hr class="my-5 border-slate-300">
+            <blockquote class="text-[15px] leading-[1.75] text-navy text-justify">
+              &ldquo;I know I can count on Idea Solution if I need my project done fast and with
+            the best possible result. Idea Solution was a real pleasure to work with.&rdquo;
+            </blockquote>
+          </figure>
+        </li>
+        <li class="fb-item" aria-hidden="true">
+          <figure class="bg-[#F1F1F1] p-7">
+            <div class="flex items-center gap-4">
+              <img src="assets/img/t2.jpg" alt="" class="h-14 w-14 shrink-0 rounded-full object-cover">
+              <figcaption>
+                <div class="text-[14px] font-bold tracking-wide">TAREQ MAHMUD CHOWDHURY</div>
+                <div class="text-[14px] text-ink">Managing Director, Nexiustech Limited</div>
+              </figcaption>
+            </div>
+            <hr class="my-5 border-slate-300">
+            <blockquote class="text-[15px] leading-[1.75] text-navy text-justify">
+              &ldquo;I know I can count on Idea Solution if I need my project done fast and with
+            the best possible result.&rdquo;
+            </blockquote>
+          </figure>
+        </li>
+      </ul>
     </div>
   </div>
 </section>
