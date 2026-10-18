@@ -76,13 +76,13 @@ selectors use two classes so they outrank the equal-specificity `md:sticky`
 utility regardless of source order.
 
 **Key products — clickable cards.** Each card is an `<a target="_blank"
-rel="noopener noreferrer">` that opens the product site in a new tab.
+rel="noopener noreferrer">` that opens the product site in a new tab:
+RightEdu → `rightedu.bd`, MediTech → `meditechlis.com`,
+Kumari → `konnakumari.com`.
 
-> **The three URLs are not set yet.** Each card is an `<a>` with *no* `href`,
-> which is inert — not clickable, not keyboard-focusable, no pointer cursor and
-> no corner arrow, so nothing looks broken. Add `href="https://..."` to the link
-> (there's a comment above each one) and the card becomes a working link with no
-> other change; the hover lift and arrow are gated on `[href]`.
+Every affordance (pointer cursor, hover lift, corner arrow) is gated on
+`[href]`, so if a URL is ever removed the card goes inert rather than looking
+clickable and doing nothing.
 
 **Experts — full-width row, hover to expand.** Pure CSS (`.team-row` /
 `.team-card`). Seven cards, CEO in the middle. Every card is a uniform 396px
