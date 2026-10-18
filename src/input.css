@@ -33,6 +33,26 @@ body { -webkit-font-smoothing: antialiased; }
 .svc-no-stack .svc-card  { position: relative; top: auto; box-shadow: none; }
 .svc-no-stack .svc-stack { padding-bottom: 0; }
 
+/* --- Key products: each card links to the product site ---
+   Everything is gated on [href]. A card whose URL hasn't been filled in yet is
+   an <a> with no href, which is inert — so it must not look or behave like a
+   link either: no pointer cursor, no hover lift, no corner arrow. */
+.product-card { transition: box-shadow .3s ease, transform .3s ease; }
+.product-card[href] { cursor: pointer; }
+.product-card[href]:hover { box-shadow: 0 18px 40px -18px rgba(0, 25, 76, .38); }
+.product-card[href]:hover .product-go { opacity: 1; transform: none; }
+
+.product-go {
+  opacity: 0;
+  transform: translate(4px, -4px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+.product-card:not([href]) .product-go { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .product-card, .product-go { transition: none; }
+}
+
 /* --- Clients feedback: the two side columns scroll in opposite directions ---
    The track renders the card list twice and travels exactly one copy's height,
    so the loop is seamless. Spacing is margin-bottom, not gap: with `gap` the

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v=fa40b64b">
+<link rel="stylesheet" href="assets/css/styles.css?v=10f21d43">
 </head>
 
 <body class="font-sans bg-white text-navy antialiased overflow-x-clip">
@@ -383,7 +383,15 @@
   <div class="mt-14 grid gap-2 lg:mx-auto lg:w-[86%]">
 
     <!-- RightEdu -->
-    <article class="grid md:grid-cols-[509fr_600fr] items-stretch">
+    <!-- RightEdu: add href="https://..." on the link below to make this card clickable -->
+    <a target="_blank" rel="noopener noreferrer"
+       aria-label="RightEdu — visit the product website (opens in a new tab)"
+       class="product-card group relative grid md:grid-cols-[509fr_600fr] items-stretch transition-shadow duration-300 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+      <span class="product-go absolute right-6 top-6 z-10 grid h-9 w-9 place-items-center rounded-full bg-white/90 text-navy shadow-sm" aria-hidden="true">
+        <svg class="h-4 w-4" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3.5 10.5 10.5 3.5M5 3.5h5.5V9"/>
+        </svg>
+      </span>
       <div class="bg-[#E5EFFF] p-9 lg:p-12 flex flex-col">
         <span class="text-[15px] tracking-wide text-ink">01</span>
         <img src="assets/img/logo-rightedu.png" alt="RightEdu" class="mt-5 h-9 w-auto self-start">
@@ -396,11 +404,19 @@
         <img src="assets/img/shot-rightedu.jpg" alt="RightEdu student dashboard"
              class="w-full object-cover shadow-xl md:scale-[1.12] md:-translate-x-4">
       </div>
-    </article>
+    </a>
 
     <div class="grid gap-2 md:grid-cols-2">
       <!-- MediTech -->
-      <article class="bg-[#EEF2F5] p-9 lg:p-11">
+      <!-- MediTech: add href="https://..." on the link below to make this card clickable -->
+    <a target="_blank" rel="noopener noreferrer"
+       aria-label="MediTech — visit the product website (opens in a new tab)"
+       class="product-card group relative bg-[#EEF2F5] p-9 lg:p-11 transition-shadow duration-300 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+      <span class="product-go absolute right-6 top-6 z-10 grid h-9 w-9 place-items-center rounded-full bg-white/90 text-navy shadow-sm" aria-hidden="true">
+        <svg class="h-4 w-4" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3.5 10.5 10.5 3.5M5 3.5h5.5V9"/>
+        </svg>
+      </span>
         <span class="text-[15px] tracking-wide text-ink">02</span>
         <img src="assets/img/logo-meditech.png" alt="MediTech" class="mt-5 h-10 w-auto">
         <p class="mt-6 text-[16px] leading-[1.7] text-navy">
@@ -409,10 +425,18 @@
         </p>
         <img src="assets/img/shot-meditech.png" alt="MediTech pathology dashboard"
              class="mt-8 w-full object-cover shadow-lg">
-      </article>
+      </a>
 
       <!-- Kumari -->
-      <article class="bg-[#FFF1D5] p-9 lg:p-11">
+      <!-- Kumari: add href="https://..." on the link below to make this card clickable -->
+    <a target="_blank" rel="noopener noreferrer"
+       aria-label="Kumari — visit the product website (opens in a new tab)"
+       class="product-card group relative bg-[#FFF1D5] p-9 lg:p-11 transition-shadow duration-300 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+      <span class="product-go absolute right-6 top-6 z-10 grid h-9 w-9 place-items-center rounded-full bg-white/90 text-navy shadow-sm" aria-hidden="true">
+        <svg class="h-4 w-4" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3.5 10.5 10.5 3.5M5 3.5h5.5V9"/>
+        </svg>
+      </span>
         <span class="text-[15px] tracking-wide text-ink">03</span>
         <img src="assets/img/logo-kumari.png" alt="Kumari" class="mt-5 h-10 w-auto">
         <p class="mt-6 text-[16px] leading-[1.7] text-navy">
@@ -420,7 +444,7 @@
         </p>
         <img src="assets/img/shot-kumari.jpg" alt="Kumari e-commerce storefront"
              class="mt-8 w-full object-cover shadow-lg">
-      </article>
+      </a>
     </div>
   </div>
 </section>

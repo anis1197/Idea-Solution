@@ -75,6 +75,15 @@ table that would need a new entry for every breakpoint. Those override
 selectors use two classes so they outrank the equal-specificity `md:sticky`
 utility regardless of source order.
 
+**Key products — clickable cards.** Each card is an `<a target="_blank"
+rel="noopener noreferrer">` that opens the product site in a new tab.
+
+> **The three URLs are not set yet.** Each card is an `<a>` with *no* `href`,
+> which is inert — not clickable, not keyboard-focusable, no pointer cursor and
+> no corner arrow, so nothing looks broken. Add `href="https://..."` to the link
+> (there's a comment above each one) and the card becomes a working link with no
+> other change; the hover lift and arrow are gated on `[href]`.
+
 **Experts — full-width row, hover to expand.** Pure CSS (`.team-row` /
 `.team-card`). Seven cards, CEO in the middle. Every card is a uniform 396px
 tall, with the name/designation overlaid on the bottom of the photo rather than
